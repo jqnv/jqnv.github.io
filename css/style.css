@@ -36,6 +36,31 @@ body {
     align-items: center;
 }
 
+.logo img {
+    height: 40px; /* Control the logo height */
+    width: auto;
+    transition: opacity 0.3s ease;
+}
+
+/* Update existing .logo styles to target the anchor */
+.logo {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0;
+}
+
+/* Optional: Add hover effect */
+.logo:hover img {
+    opacity: 0.8;
+}
+
+/* Mobile adjustment */
+@media (max-width: 768px) {
+    .logo img {
+        height: 35px;
+    }
+}
+
 .logo {
     font-family: 'Playfair Display', serif;
     color: white;
