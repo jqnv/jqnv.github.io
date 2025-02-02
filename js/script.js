@@ -1,38 +1,27 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
+// Toggle the navigation menu on small screens
+document.querySelector('.menu-toggle').addEventListener('click', () => {
+  const navLinks = document.querySelector('.nav-links');
+  navLinks.classList.toggle('active');
+});
 
-    hamburger.addEventListener('click', function(e) {
-        e.stopPropagation();
-        navLinks.classList.toggle('active');
-        hamburger.classList.toggle('active');
-    });
+// Hide the menu when a link is clicked
+document.querySelectorAll('.navbar a').forEach(link => {
+  link.addEventListener('click', () => {
+    const navLinks = document.querySelector('.nav-links');
+    if (navLinks.classList.contains('active')) {
+      navLinks.classList.remove('active');
+    }
+  });
+});
 
-    // Close menu when clicking outside
-    document.addEventListener('click', function() {
-        navLinks.classList.remove('active');
-        hamburger.classList.remove('active');
+// Scroll to sections
+document.querySelectorAll('.navbar a').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const targetId = e.target.getAttribute('href').substring(1);
+    document.querySelectorAll('.content').forEach(content => {
+      content.style.display = 'none';
     });
-
-    // Close menu when clicking a link
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            hamburger.classList.remove('active');
-        });
-    });
-
-    // Smooth scroll for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
+    document.getElementById(targetId).style.display = 'block';
+  });
 });
