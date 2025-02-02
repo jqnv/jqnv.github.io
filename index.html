@@ -1,41 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Encanto Café - Artisan Coffee Experience</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Encanto Café</title>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container">
-            <a href="#" class="logo">
-                <img src="/images/logo_2_mini.png" alt="Encanto Café Logo">
-            </a>
-            <ul class="nav-links" id="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#history">History</a></li>
-                <li><a href="#coffees">Coffees</a></li>
-                <li><a href="#snacks">Bar Snacks</a></li>
-                <li><a href="#desserts">Desserts</a></li>
-                <li><a href="#about">About Us</a></li>
-            </ul>
-        </div>
-    </nav>
 
-    <main>
-        <section class="hero" id="home">
-            <div class="hero-content">
-                <h1>Artisan Coffee Crafted with Passion</h1>
-                <p>Experience the perfect blend of tradition and innovation</p>
-                <a href="#coffees" class="btn">Explore Our Menu</a>
-            </div>
-        </section>
+<div class="navbar">
+  <div class="logo">Encanto Café</div>
+  <button class="menu-toggle" aria-label="Toggle Menu">
+    ☰
+  </button>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#history">History</a></li>
+    <li><a href="#coffees">Coffees</a></li>
+    <li><a href="#bar-snacks">Bar Snacks</a></li>
+    <li><a href="#desserts">Desserts</a></li>
+    <li><a href="#about-us">About Us</a></li>
+  </ul>
+</div>
 
-        <!-- Add more sections for other pages here -->
-    </main>
+<section id="home" class="content">
+  <h1>Welcome to Encanto Café</h1>
+  <p>Experience the magic of freshly brewed coffee and indulge in our delightful treats.</p>
+  <img src="https://via.placeholder.com/600x400?text=Coffee+Shop" alt="Coffee Shop">
+</section>
 
-    <script src="/js/script.js"></script>
+<section id="history" class="content" style="display:none;">
+  <h2>Our History</h2>
+  <p>Founded in 1990, Encanto Café has been serving quality coffee for over three decades.</p>
+  <img src="https://via.placeholder.com/600x400?text=History" alt="History">
+</section>
+
+<section id="coffees" class="content" style="display:none;">
+  <h2>Our Coffees</h2>
+  <p>Explore our range of handcrafted coffees from around the world.</p>
+  <img src="https://via.placeholder.com/600x400?text=Coffees" alt="Coffees">
+</section>
+
+<section id="bar-snacks" class="content" style="display:none;">
+  <h2>Bar Snacks</h2>
+  <p>Enjoy our selection of savory snacks that pair perfectly with your coffee.</p>
+  <img src="https://via.placeholder.com/600x400?text=Bar+Snacks" alt="Bar Snacks">
+</section>
+
+<section id="desserts" class="content" style="display:none;">
+  <h2>Desserts</h2>
+  <p>Satisfy your sweet tooth with our decadent desserts.</p>
+  <img src="https://via.placeholder.com/600x400?text=Desserts" alt="Desserts">
+</section>
+
+<section id="about-us" class="content" style="display:none;">
+  <h2>About Us</h2>
+  <p>Learn more about our mission to bring you the best coffee experience.</p>
+  <img src="https://via.placeholder.com/600x400?text=About+Us" alt="About Us">
+</section>
+
+<script src="script.js"></script>
+
 </body>
 </html>
