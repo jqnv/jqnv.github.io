@@ -1,27 +1,32 @@
-// Toggle the navigation menu on small screens
-document.querySelector('.menu-toggle').addEventListener('click', () => {
-  const navLinks = document.querySelector('.nav-links');
-  navLinks.classList.toggle('active');
-});
-
-// Hide the menu when a link is clicked
-document.querySelectorAll('.navbar a').forEach(link => {
-  link.addEventListener('click', () => {
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
-    if (navLinks.classList.contains('active')) {
-      navLinks.classList.remove('active');
-    }
-  });
-});
+    const sections = document.querySelectorAll('.content');
 
-// Scroll to sections
-document.querySelectorAll('.navbar a').forEach(link => {
-  link.addEventListener('click', e => {
-    e.preventDefault();
-    const targetId = e.target.getAttribute('href').substring(1);
-    document.querySelectorAll('.content').forEach(content => {
-      content.style.display = 'none';
+    // Toggle mobile menu
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
     });
-    document.getElementById(targetId).style.display = 'block';
-  });
+
+    // Handle navigation clicks
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = e.target.getAttribute('href');
+            
+            // Hide all sections
+            sections.forEach(section => {
+                section.style.display = 'none';
+            });
+            
+            // Show target section
+            document.querySelector(targetId).style.display = 'block';
+            
+            // Close mobile menu
+            navLinks.classList.remove('active');
+        });
+    });
+
+    // Show home section by default
+    document.querySelector('#home').style.display = 'block';
 });
