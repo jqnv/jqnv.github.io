@@ -12,38 +12,91 @@ body {
   color: #333;
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    const sections = document.querySelectorAll('.content');
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    // Toggle mobile menu
-    menuToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-    });
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
 
-    // Handle navigation clicks
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const targetId = e.target.getAttribute('href');
-            
-            // Hide all sections
-            sections.forEach(section => {
-                section.style.display = 'none';
-            });
-            
-            // Show target section
-            document.querySelector(targetId).style.display = 'block';
-            
-            // Close mobile menu
-            navLinks.classList.remove('active');
-        });
-    });
+.navbar {
+    background: #3E2723;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
 
-    // Show home section by default
-    document.querySelector('#home').style.display = 'block';
-});
+.logo {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.content {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.content img {
+    width: 100%;
+    height: auto;
+    margin-top: 1rem;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #3E2723;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links li {
+        padding: 1rem 0;
+    }
+}
 /* Main content styles */
 .content {
   padding: 50px 20px;
