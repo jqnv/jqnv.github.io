@@ -90,6 +90,9 @@ body {
 
 /* Mobile Styles */
 @media (max-width: 768px) {
+    .navbar .logo img {
+    width: 100px; /* Smaller size for mobile */
+  }
     .nav-links {
         display: none;
         position: absolute;
