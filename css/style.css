@@ -83,8 +83,8 @@ body {
 }
 
 .content img {
-    max-width: 10%;
-    max-height: 10%;
+    height: 100px; 
+    width: 100px;
     margin-top: 1rem;
 }
 
