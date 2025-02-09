@@ -67,8 +67,8 @@ body {
 }
 
 .content img {
-    width: 100%;
-    height: auto;
+    max-width: 50%;
+    max-height: 50%
     margin-top: 1rem;
 }
 
@@ -142,7 +142,8 @@ footer {
 }
 
 footer p {
-  font-size: 14px;
+  
+  font-size: 8px;
   margin: 5px 0;
 }
 
