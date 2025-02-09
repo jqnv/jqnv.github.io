@@ -31,6 +31,22 @@ body {
     justify-content: space-between;
     align-items: center;
     position: relative;
+
+    .navbar .logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar .logo img {
+    width: 150px; /* Adjust this value as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Optional: Add spacing between the image and text */
+  }
 }
 
 .logo {
