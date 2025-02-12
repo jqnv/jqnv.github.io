@@ -19,6 +19,31 @@ body {
     box-sizing: border-box;
 }
 
+.language-switch {
+    margin-left: auto;
+    margin-right: 1rem;
+}
+
+.lang-btn {
+    background: none;
+    border: 1px solid white;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    margin: 0 0.2rem;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.lang-btn.active {
+    background: white;
+    color: #3E2723;
+}
+
+.lang-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -91,6 +116,12 @@ body {
 /* Mobile Styles */
 /* Responsive layout */
 @media (max-width: 768px) {
+
+.language-switch {
+        order: -1;
+        margin-left: 0;
+    }
+  
   .navbar .menu-toggle {
     display: block;
   }
