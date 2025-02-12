@@ -116,7 +116,7 @@ body {
   }
 
   .navbar ul.nav-links li {
-    margin: 5px 0; /* Reduced margin between items */
+    margin: 1px 0; /* Reduced margin between items */
     text-align: center; /* Center-align the text */
   }
 
