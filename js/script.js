@@ -59,3 +59,34 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('#home').style.display = 'block';
 });
 
+function changeLanguage(lang) {
+    // Update all elements with data-i18n attribute
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        element.textContent = translations[lang][key] || element.textContent;
+    });
+
+    // Update content sections
+    document.querySelector('#home h1').textContent = translations[lang].welcome;
+    document.querySelector('#home p').textContent = translations[lang].welcomeText;
+    document.querySelector('#history h2').textContent = translations[lang].historyTitle;
+    document.querySelector('#history p').textContent = translations[lang].historyText;
+    // Add more content updates as needed
+
+    // Update active button state
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+}
+
+// Add event listeners for language buttons
+document.querySelectorAll('.lang-btn').forEach(button => {
+    button.addEventListener('click', () => {
+        const lang = button.dataset.lang;
+        changeLanguage(lang);
+    });
+});
+
+// Set default language
+changeLanguage('en');
+
